@@ -1,17 +1,16 @@
-import java.util.Scanner;
+import java.io.Serializable;
 
-public class Human {
+public class Human implements Serializable {
     private String name;
-    private String CCCD;
-    private String birthplace;
+    private String dateOfBirth;
+    private String identity;
+    private String phoneNumber;
 
-    public Human() {
-    }
-
-    public Human(String name, String CCCD, String birthplace) {
+    public Human(String name, String dateOfBirth, String identity, String phoneNumber) {
         this.name = name;
-        this.CCCD = CCCD;
-        this.birthplace = birthplace;
+        this.dateOfBirth = dateOfBirth;
+        this.identity = identity;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {
@@ -22,33 +21,33 @@ public class Human {
         this.name = name;
     }
 
-    public String getCCCD() {
-        return CCCD;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setCCCD(String CCCD) {
-        this.CCCD = CCCD;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getBirthplace() {
-        return birthplace;
+    public String getIdentity() {
+        return identity;
     }
 
-    public void setBirthplace(String birthplace) {
-        this.birthplace = birthplace;
+    public void setIdentity(String identity) {
+        this.identity = identity;
     }
-    public void CustomerInformation(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập họ tên khách hàng: ");
-        name = scanner.nextLine();
-        System.out.print("Nhập quê quán: ");
-        birthplace = scanner.nextLine();
-        System.out.print("Nhập số chứng minh nhân dân: ");
-        CCCD = scanner.nextLine();
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
-    public void ShowCustomerInformation(){
-        System.out.println("Họ và tên khách hàng: " + name);
-        System.out.println("Quê quán: " + birthplace);
-        System.out.println("Số chứng minh nhân dân: " + CCCD);
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Họ tên: " + name + ", Ngày sinh: " + dateOfBirth + ", CCCD: " + identity + ", SDT:" + phoneNumber;
+    }
+
 }
